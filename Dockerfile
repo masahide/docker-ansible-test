@@ -14,7 +14,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 RUN yum makecache fast \
  && yum -y install epel-release \
  && yum -y --disablerepo=* --enablerepo=epel update \
- && yum -y --enablerepo=epel install ansible-2.4.2 ansible-lint sudo awscli\
+ && yum -y --enablerepo=epel install ansible-2.7.0 ansible-lint sudo awscli\
  && yum clean all
 
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
